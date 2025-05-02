@@ -1,0 +1,6 @@
+сначала 
+pip install flask
+pip install flask-sqlalchemy
+pip install flask-cors
+что бы запустить Api
+python app.py

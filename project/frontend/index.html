@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя книжная полка</title>
+    <!-- Подключаем иконки для красивого дизайна -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-book"></i> Моя книжная полка</h1>
+            <p class="subtitle">Здесь хранятся все мои любимые книги</p>
+        </header>
+
+        <main>
+            <!-- Форма для добавления новых книг -->
+            <section class="add-book">
+                <h2>Добавить новую книгу</h2>
+                <form id="bookForm">
+                    <div class="form-group">
+                        <label for="title">Название книги:</label>
+                        <input type="text" id="title" required placeholder="Например, 'Мастер и Маргарита'">
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Автор:</label>
+                        <input type="text" id="author" required placeholder="Например, 'Михаил Булгаков'">
+                    </div>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-plus-circle"></i> Добавить книгу
+                    </button>
+                </form>
+            </section>
+
+            <!-- Список всех книг -->
+            <section class="book-list">
+                <div class="list-header">
+                    <h2>Все книги (<span id="bookCount">0</span>)</h2>
+                    <div class="search-box">
+                        <input type="text" id="search" placeholder="Поиск по книгам...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                
+                <!-- Здесь будут отображаться книги -->
+                <div id="loading">
+                    <div class="spinner"></div>
+                    <p>Загружаем ваши книги...</p>
+                </div>
+                
+                <ul id="books">
+                    <!-- Книги будут добавляться сюда через JavaScript -->
+                </ul>
+                
+                <div id="emptyState" class="empty-state hidden">
+                    <i class="fas fa-book-open"></i>
+                    <p>Ваша книжная полка пуста</p>
+                    <p>Добавьте первую книгу!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Сделано с <i class="fas fa-heart"></i> для любителей чтения</p>
+        </footer>
+    </div>
+
+    <!-- Всплывающие уведомления -->
+    <div id="notification" class="notification hidden"></div>
+
+    <!-- Основной JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
